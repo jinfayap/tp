@@ -65,27 +65,34 @@ public class AddIngredientCommand extends Command {
         switch (category.toLowerCase()) {
         case Meat.INGREDIENT_WORD:
             ingredientList.add(new Meat(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Vegetable.INGREDIENT_WORD:
             ingredientList.add(new Vegetable(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Drink.INGREDIENT_WORD:
             ingredientList.add(new Drink(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Fruit.INGREDIENT_WORD:
             ingredientList.add(new Fruit(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Staple.INGREDIENT_WORD:
             ingredientList.add(new Staple(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Dairy.INGREDIENT_WORD:
             ingredientList.add(new Dairy(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         case Miscellaneous.INGREDIENT_WORD:
             // Fallthrough
         default:
             this.categoryName = Miscellaneous.INGREDIENT_WORD;
             ingredientList.add(new Miscellaneous(ingredientName, categoryName, quantity, price, expiry));
+            Storage.saveIngredientData(ingredientList);
             break;
         }
         

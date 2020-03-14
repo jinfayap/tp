@@ -90,4 +90,26 @@ public class Recipe {
         System.out.println(recipeItems.size());
         return this.recipeItems;
     }
+    
+    /**
+     * To format all variables of add ingredient as a string.
+     * @return String consisting of ingredient name, category, quantity, price and expiry.
+     */
+    @Override
+    public String toString() {
+        return "/n " + getRecipeName() + " " + getRecipeItem() + " " + recipeItems.size();
+    }
+    
+    public void loadIngredientsToRecipe(ArrayList<String> recipeData) {
+        
+        for (String item : recipeData) {
+            String[] parse = item.split(" ");
+            String ingrName = parse[0];
+            String ingrCategory = parse[1];
+            Integer ingrQuantity = Integer.parseInt(parse[2]);
+            Ingredient newIngredient = createIngr(ingrName, ingrCategory, ingrQuantity);
+            recipeItems.add(newIngredient);
+        }
+        recipeIngrQty = recipeItems.size();
+    }
 }
