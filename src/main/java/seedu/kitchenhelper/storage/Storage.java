@@ -11,6 +11,8 @@ import seedu.kitchenhelper.object.ingredient.Staple;
 import seedu.kitchenhelper.object.ingredient.Vegetable;
 import seedu.kitchenhelper.object.ingredient.Miscellaneous;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,6 +41,7 @@ public class Storage {
         this.filePathIngredient = filePathIngredient;
         this.filePathRecipe = filePathRecipe;
         this.filePathChore = filePathChore;
+        createFileIfNotExist();
     }
 
 
@@ -305,6 +308,33 @@ public class Storage {
             fw.close();
         } catch (IOException err) {
             err.printStackTrace();
+        }
+    }
+    
+    public static String getRelativePath() {
+        Path currentRelativePath = Paths.get("");
+        String s = currentRelativePath.toAbsolutePath().toString();
+        return s;
+    }
+    
+    private void createFileIfNotExist() {
+        try {
+            File ingredientTxt = new File(this.filePathIngredient);
+            File recipeTxt = new File(this.filePathRecipe);
+            File choreTxt = new File(this.filePathChore);
+            
+            if((!ingredientTxt.exists())) {
+                ingredientTxt.createNewFile();
+            }
+            if((!recipeTxt.exists())) {
+                recipeTxt.createNewFile();
+            }
+            if((!choreTxt.exists())) {
+                choreTxt.createNewFile();
+            }
+            
+        } catch(IOException io) {
+            System.out.println("Unable to create a file");
         }
     }
 }

@@ -31,19 +31,23 @@ public class KitchenHelper {
     
     private Ui ui;
     private Storage storage;
-  
+    private String ingredientPath = (Storage.getRelativePath() + "\\outputIngredient.txt").replace("\\", "/");
+    private String recipePath = (Storage.getRelativePath() + "\\outputRecipe.txt").replace("\\", "/");
+    private String chorePath = (Storage.getRelativePath() + "\\outputChore.txt").replace("\\", "/");
+    
     private void start() {
         ui = new Ui();
         ui.showWelcomeMessage();
-        storage = new Storage("outputIngredient.txt", "outputRecipe.txt",
-                "outputChore.txt");
+        storage = new Storage(ingredientPath, recipePath, chorePath);
         try {
             ingredientList = new ArrayList<>(storage.getIngredientData());
             recipeList = new ArrayList<>(storage.getRecipeData());
             choreList = new ArrayList<>(storage.getChoreData());
+            System.out.println(ingredientPath);
+            System.out.println(recipePath);
+            System.out.println(chorePath);
         } catch (FileNotFoundException err) {
-            //ui.errorMessage(err.toString());
-            //ingredientList = new
+            System.out.println(err.toString());
         }
     }
     
@@ -57,7 +61,7 @@ public class KitchenHelper {
     private void exit() {
         System.exit(0);
     }
-
+    
     private void setUpLogger() throws KitchenHelperException {
         /*
         Output to console only when a serious failure has caused normal
