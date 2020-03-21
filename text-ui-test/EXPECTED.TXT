@@ -46,6 +46,24 @@ kailan has been deleted.
 deleterecipe /n Chicken Salad
 Chicken Salad has been deleted
 ===================================================
+listchore
+Here are the chores in your list:
+1. [x] buy groceries (by: Tuesday 12pm)
+===================================================
+listingredient all
+Here is the list of Ingredients in Inventory:
+Format : Ingredient Name|Quantity|Price|Expiry
+all:
+dairy:
+HL Milk|3|12.2|2020-03-14
+drink:
+fruit:
+meat:
+miscellaneous:
+staple:
+vegetable:
+
+===================================================
 exit
 Exiting KitchenHelper as requested ...
 ===================================================

@@ -10,4 +10,6 @@ deleteingredient /n Beef
 deleteingredient /n kailan /q 35
 deleteingredient /n kailan
 deleterecipe /n Chicken Salad
+listchore
+listingredient all
 exit
