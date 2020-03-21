@@ -1,2 +1,1 @@
 /n Beef /c Meat /q 30 /p 20.2 /e 2020-02-20
-/n kailan /c Vegetable /q 30 /p 30.45 /e 2020-03-12
