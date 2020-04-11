@@ -82,3 +82,4 @@ to the project.
 , [2](https://ay1920s2-cs2113t-m16-2.github.io/tp/DeveloperGuide#f5-search-for-ingredient)
 , [3](https://ay1920s2-cs2113t-m16-2.github.io/tp/DeveloperGuide#f10-search-for-recipe)
 , [4](https://ay1920s2-cs2113t-m16-2.github.io/tp/DeveloperGuide#f14-search-for-chore))
+
